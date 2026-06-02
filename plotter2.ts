@@ -48,12 +48,9 @@ class Plotter {
     }
 
     private calcNewPosition(distance: Distance): Position {
-        // Преобразуем градусы в радианы при 180.0 градусов = 1 pi радиан
         const angleInRads = this.angle * (Math.PI / 180.0);
-        // новая позиция
         const x = this.position.x + distance * Math.cos(angleInRads);
         const y = this.position.y + distance * Math.sin(angleInRads);
-        // возвращаем новую позицию
         return { x: Math.round(x), y: Math.round(y) };
     }
 
